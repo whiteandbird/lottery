@@ -1,0 +1,3 @@
+com\itwang\lottery\rpc\res\ActivityRes.class
+com\itwang\lottery\rpc\dto\ActivityDto.class
+com\itwang\lottery\rpc\req\ActivityReq.class
