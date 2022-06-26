@@ -6,21 +6,32 @@ spring:
     username: root
     password: 123
     url: jdbc:mysql://localhost:3306/lottery?useSSL=false
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
-  config-location: classpath:/mybatis/mapper/*.xml
-  mapper-locations: classpath:/mybatis/config/mybaits-config.xml
+  config-location: classpath:/mybatis/config/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+
+
 
 
 dubbo:
   application:
     name: Lottery
     version: 1.0.0
+#    parameters:
+#      unicast: false
   registry:
-    address: N/A #multicast://224.5.6.7:1234
+    address: multicast://224.5.6.7:1234
   protocol:
     name: dubbo
     port: 20880
   scan:
     base-packages: com.itwang.lottery.rpc
+  provider:
+    timeout: 15000
+  consumer:
+    timeout: 15000
+logging:
+  config:
+    com.itwang: debug

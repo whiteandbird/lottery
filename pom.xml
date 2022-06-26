@@ -15,6 +15,7 @@
         <module>lottery-infrastructure</module>
         <module>lottery-interface</module>
         <module>lottery-rpc</module>
+        <module>lottery-test</module>
     </modules>
 
     <parent>
@@ -29,6 +30,16 @@
         <jdk.version>1.8</jdk.version>
         <sourceEncoding>UTF-8</sourceEncoding>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.5.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

@@ -28,6 +28,11 @@ public class ActivityRes implements Serializable {
         this.activity = activity;
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
     public Result getResult() {
         return result;
     }

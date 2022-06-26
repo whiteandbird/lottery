@@ -1,2 +1,8 @@
-com\itwang\lottery\infrastructure\po\Activity.class
+com\itwang\lottery\infrastructure\dao\IAwardDao.class
+com\itwang\lottery\infrastructure\dao\IStrategyDao.class
+com\itwang\lottery\infrastructure\po\StrategyDetail.class
 com\itwang\lottery\infrastructure\dao\IActivityDao.class
+com\itwang\lottery\infrastructure\po\Activity.class
+com\itwang\lottery\infrastructure\dao\IStrategyDetailDao.class
+com\itwang\lottery\infrastructure\po\Strategy.class
+com\itwang\lottery\infrastructure\po\Award.class
