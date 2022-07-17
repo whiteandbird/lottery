@@ -53,12 +53,12 @@ public abstract class AbstractDrawBase extends DrawStrategySupport implements ID
 
         }
         // 非单体策略 不需要进行初始化
-        if(Constants.StrateMode.ENTIRETY.getCode().equals(strategyMode)){
+        if(Constants.StrategyMode.ENTIRETY.getCode().equals(strategyMode)){
             if(CollUtil.isNotEmpty(strategyDetailList)){
                 drawAlgorithm.putAwardRateInfoIfAbsent(strategyId, awardRateInfoList);
             }
         }
-        if(!Constants.StrateMode.SINGLE.getCode().equals(strategyMode)) return;
+        if(!Constants.StrategyMode.SINGLE.getCode().equals(strategyMode)) return;
         boolean existRateTuple = drawAlgorithm.isExistRateTuple(strategyId);
         if(existRateTuple) return;
 

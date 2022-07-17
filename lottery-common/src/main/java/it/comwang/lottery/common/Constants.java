@@ -31,7 +31,7 @@ public class Constants {
     }
 
 
-    public enum StrateMode{
+    public enum StrategyMode {
 
         SINGLE(1, "单项概率"),
 
@@ -45,7 +45,7 @@ public class Constants {
 
 
 
-        StrateMode(Integer code, String info){
+        StrategyMode(Integer code, String info){
             this.code = code;
             this.info = info;
         }

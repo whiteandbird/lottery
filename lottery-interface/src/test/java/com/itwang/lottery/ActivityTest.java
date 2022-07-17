@@ -64,7 +64,7 @@ public class ActivityTest {
         StrategyVO strategy = new StrategyVO();
         strategy.setStrategyId(10002L);
         strategy.setStrategyDesc("抽奖策略");
-        strategy.setStrategyMode(Constants.StrateMode.SINGLE.getCode());
+        strategy.setStrategyMode(Constants.StrategyMode.SINGLE.getCode());
         strategy.setGrantType(1);
         strategy.setGrantDate(new Date());
         strategy.setExtInfo("");
