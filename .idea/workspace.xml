@@ -2,42 +2,87 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6a0fafe-7ce3-4656-9e31-2a5e1f98db7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/model/aggregates/StrategyRich.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/model/req/DrawReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/model/res/DrawResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/model/vo/AwardRateInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/repository/IStrategyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/repository/impl/StrategyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/algorithm/BaseAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/algorithm/impl/SingleRateRandomDrawAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/draw/DrawBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/draw/DrawConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/draw/IDrawExec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/draw/impl/DrawExeclmpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IAwardDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IStrategyDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IStrategyDetailDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/Award.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/Strategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/StrategyDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-interface/src/main/java/com/itwang/lottery/interfaces/ActivityBoothImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Award_Mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Strategy_Mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/StratetgyDetail_Mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/DaoRunTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/DrawAlgorithmTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/RpcTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-rpc/src/main/java/com/itwang/lottery/rpc/IActivityBooth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-test/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-test/src/test/java/com/itwang/lottery/rpc/RpcTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/aggregates/ActivityConfigRich.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/req/ActivityConfigReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/vo/ActivityVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/vo/AlterStateVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/vo/AwardVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/vo/StrategyDetailVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/vo/StrategyVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/repository/IActivityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/deploy/IActivityDeploy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/deploy/impl/ActivityDeployImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/IActivityPartake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/stateflow/AbstractState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/stateflow/IStateHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/stateflow/StateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/stateflow/event/ArraignmentState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/stateflow/event/CloseState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/stateflow/event/DoingState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/stateflow/event/EditingState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/stateflow/event/OpenState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/stateflow/event/PassState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/stateflow/event/RefuseState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/stateflow/impl/StateHandlerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/model/req/GoodReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/model/res/DistributionRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/model/vo/ShippingAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/repository/IAwardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/service/factory/DistributuionGoodsFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/service/factory/GoodsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/service/goods/DistributionBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/service/goods/IDistributionGoods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/service/goods/impl/CouponGoods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/service/goods/impl/DescGoods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/service/goods/impl/PhysicalGoods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/award/service/goods/impl/RedeemCodeGoods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/model/res/DrawResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/model/vo/AwardBriefVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/model/vo/DrawAwardInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/model/vo/StrategyBriefVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/model/vo/StrategyDetailBriefVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/impl/DrawExeclmpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/support/ids/IdContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/support/ids/IdGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/support/ids/policy/RandomNumberic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/support/ids/policy/ShortCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/support/ids/policy/SnowFlake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/ActivityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/AwardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/ActivityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/GeneratorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/IGoodFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottery-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-interface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/model/aggregates/StrategyRich.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/model/aggregates/StrategyRich.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/model/req/DrawReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/model/req/DrawReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/model/res/DrawResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/model/vo/AwardRateInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/model/vo/AwardRateInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/repository/IStrategyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/repository/IStrategyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/repository/impl/StrategyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/StrategyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/algorithm/BaseAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/algorithm/BaseAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/algorithm/IDrawAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/algorithm/IDrawAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/algorithm/impl/SingleRateRandomDrawAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/algorithm/impl/SingleRateRandomDrawAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/draw/DrawBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/draw/DrawConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/DrawConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/draw/IDrawExec.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/IDrawExec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/draw/impl/DrawExeclmpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IActivityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IAwardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IAwardDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IStrategyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IStrategyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IStrategyDetailDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IStrategyDetailDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/StrategyDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/StrategyDetail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/config/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/config/mybatis-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Activity_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Activity_Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-rpc/src/main/java/com/itwang/lottery/rpc/res/ActivityRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-rpc/src/main/java/com/itwang/lottery/rpc/res/ActivityRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Award_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Award_Mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Strategy_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Strategy_Mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/StratetgyDetail_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/StratetgyDetail_Mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/DaoRunTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/DaoRunTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/DrawAlgorithmTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/DrawAlgorithmTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,6 +94,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package.json" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -77,18 +123,18 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17602997" />
     <property name="project.structure.side.proportion" value="0.33295062" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.itwang.lottery" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.itwang.lottery.domain.strategy.model.vo" />
+      <recent name="com.itwang.lottery.domain.activity.model.vo" />
       <recent name="" />
       <recent name="com.itwang.lottery.rpc" />
       <recent name="com.itwang.lottery.rpc.res" />
-      <recent name="com.itwang.lottery.rpc.req" />
-      <recent name="com.itwang.lottery.rpc.dto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -103,8 +149,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DaoRunTest.test_drawExec">
-    <configuration name="DaoRunTest.test_drawExec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GeneratorTest.testGenerator">
+    <configuration name="ActivityTest.test_alterState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lottery-interface" />
       <extension name="coverage">
         <pattern>
@@ -113,8 +159,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.itwang.lottery" />
-      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.DaoRunTest" />
-      <option name="METHOD_NAME" value="test_drawExec" />
+      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.ActivityTest" />
+      <option name="METHOD_NAME" value="test_alterState" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActivityTest.test_createActivity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lottery-interface" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itwang.lottery.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itwang.lottery" />
+      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.ActivityTest" />
+      <option name="METHOD_NAME" value="test_createActivity" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,7 +198,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DaoRunTest.test_select" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneratorTest.testGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lottery-interface" />
       <extension name="coverage">
         <pattern>
@@ -145,14 +207,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.itwang.lottery" />
-      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.DaoRunTest" />
-      <option name="METHOD_NAME" value="test_select" />
+      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.GeneratorTest" />
+      <option name="METHOD_NAME" value="testGenerator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DrawAlgorithmTest.test_randomDrawAlgorithm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IGoodFactoryTest.test_Award" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lottery-interface" />
       <extension name="coverage">
         <pattern>
@@ -161,24 +223,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.itwang.lottery" />
-      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.DrawAlgorithmTest" />
-      <option name="METHOD_NAME" value="test_randomDrawAlgorithm" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RpcTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lottery-interface" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itwang.lottery.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.itwang.lottery" />
-      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.RpcTest" />
-      <option name="METHOD_NAME" value="testInsert" />
+      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.IGoodFactoryTest" />
+      <option name="METHOD_NAME" value="test_Award" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -186,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DaoRunTest.test_drawExec" />
+        <item itemvalue="JUnit.GeneratorTest.testGenerator" />
+        <item itemvalue="JUnit.ActivityTest.test_alterState" />
+        <item itemvalue="JUnit.ActivityTest.test_createActivity" />
+        <item itemvalue="JUnit.IGoodFactoryTest.test_Award" />
         <item itemvalue="JUnit.DaoRunTest.test_insert" />
-        <item itemvalue="JUnit.DaoRunTest.test_select" />
-        <item itemvalue="JUnit.DrawAlgorithmTest.test_randomDrawAlgorithm" />
-        <item itemvalue="JUnit.RpcTest.testInsert" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +251,13 @@
       <option name="presentableId" value="Default" />
       <updated>1656124205884</updated>
       <workItem from="1656124209931" duration="890000" />
-      <workItem from="1656128914743" duration="36237000" />
+      <workItem from="1656128914743" duration="47204000" />
+      <workItem from="1656686393112" duration="3763000" />
+      <workItem from="1657627317019" duration="92000" />
+      <workItem from="1657896349231" duration="19361000" />
+      <workItem from="1657958483547" duration="17041000" />
+      <workItem from="1658021679299" duration="32000" />
+      <workItem from="1658021751512" duration="3110000" />
     </task>
     <servers />
   </component>
@@ -217,7 +269,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -232,34 +286,95 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/draw/impl/DrawExeclmpl.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java</url>
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java</url>
           <line>32</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java</url>
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java</url>
           <line>26</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java</url>
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java</url>
           <line>41</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/draw/impl/DrawExeclmpl.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java</url>
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java</url>
           <line>43</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/algorithm/BaseAlgorithm.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/impl/DrawExeclmpl.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/algorithm/impl/DefaultRateRandomDrawAlgorithm.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/ActivityRepository.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/deploy/impl/ActivityDeployImpl.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/repository/IStrategyRepository.java</url>
+          <line>15</line>
+          <properties class="com.itwang.lottery.domain.strategy.repository.IStrategyRepository" method="queryAwardInfo">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/IGoodFactoryTest.java</url>
+          <line>47</line>
+          <properties class="com.itwang.lottery.IGoodFactoryTest" method="test_Award">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -17,11 +17,15 @@ public class StrategyDetail { // 自增ID
     // 奖品ID
     private String awardId;
 
+    private String awardName;
+
     // 奖品数量
     private String awardCount;
 
     // 中奖概率
     private BigDecimal awardRate;
+
+    private long awardSurplusCount;
 
     // 创建时间
     private String createTime;
@@ -85,4 +89,19 @@ public class StrategyDetail { // 自增ID
         this.updateTime = updateTime;
     }
 
+    public String getAwardName() {
+        return awardName;
+    }
+
+    public void setAwardName(String awardName) {
+        this.awardName = awardName;
+    }
+
+    public long getAwardSurplusCount() {
+        return awardSurplusCount;
+    }
+
+    public void setAwardSurplusCount(long awardSurplusCount) {
+        this.awardSurplusCount = awardSurplusCount;
+    }
 }

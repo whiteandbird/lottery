@@ -1,9 +1,8 @@
 package com.itwang.lottery;
 
 import com.alibaba.fastjson.JSON;
-import com.itwang.lottery.domain.model.req.DrawReq;
-import com.itwang.lottery.domain.model.res.DrawResult;
-import com.itwang.lottery.domain.service.draw.IDrawExec;
+import com.itwang.lottery.domain.strategy.model.req.DrawReq;
+import com.itwang.lottery.domain.strategy.service.draw.IDrawExec;
 import com.itwang.lottery.infrastructure.dao.IActivityDao;
 import com.itwang.lottery.infrastructure.po.Activity;
 import org.junit.Test;

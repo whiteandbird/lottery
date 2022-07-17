@@ -34,4 +34,4 @@ dubbo:
     timeout: 15000
 logging:
   config:
-    com.itwang: debug
+    com.itwang: error
