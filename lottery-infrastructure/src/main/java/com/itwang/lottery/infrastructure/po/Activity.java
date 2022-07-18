@@ -13,12 +13,16 @@ public class Activity {
 
     // 活动ID
     private Long activityId;
+    
+    // 策略ID
+    private Long strategyId;
 
     // 活动名称
     private String activityName;
 
     // 活动描述
     private String activityDesc;
+
 
     // 开始时间
     private Date beginDateTime;
@@ -28,6 +32,12 @@ public class Activity {
 
     // 库存
     private Integer stockCount;
+
+    /**
+     * 库存剩余
+     */
+    private Integer stockSurplusCount;
+
 
     // 每人可参与次数
     private Integer takeCount;
@@ -138,5 +148,21 @@ public class Activity {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Long getStrategyId() {
+        return strategyId;
+    }
+
+    public void setStrategyId(Long strategyId) {
+        this.strategyId = strategyId;
+    }
+
+    public Integer getStockSurplusCount() {
+        return stockSurplusCount;
+    }
+
+    public void setStockSurplusCount(Integer stockSurplusCount) {
+        this.stockSurplusCount = stockSurplusCount;
     }
 }

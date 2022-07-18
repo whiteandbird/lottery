@@ -11,4 +11,6 @@ public interface IActivityDao {
     Activity queryActivityById(Long activiryId);
 
     int alterState(AlterStateVO alterState);
+
+    int subtractionActivityStock(Long activityId);
 }
