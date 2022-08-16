@@ -20,6 +20,10 @@ public class Result implements Serializable {
         return new Result(res.getCode(), info);
     }
 
+    public static Result buildResult(Constants.ResponseCode responseCode){
+        return new Result(responseCode.getCode(), responseCode.getInfo());
+    }
+
     public static Result buildResult(String code, String info){
         return new Result(code, info);
     }

@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface IUserTakeActivityCountDao {
 
-    @DBRouter
+//    @DBRouter
     UserTakeActivityCount queryUserTakeActivityCount(UserTakeActivityCount req);
 
     void insert(UserTakeActivityCount userTakeActivityCount);

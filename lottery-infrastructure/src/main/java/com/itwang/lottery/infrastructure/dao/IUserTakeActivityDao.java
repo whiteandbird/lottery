@@ -7,10 +7,10 @@ import com.wang.middleware.db.router.annotation.DBRouterStrategy;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-@DBRouterStrategy(splitTable =  true)
+//@DBRouterStrategy(splitTable =  true)
 public interface IUserTakeActivityDao {
 
-    @DBRouter(key = "uId")
+//    @DBRouter(key = "uId")
     void insert(UserTakeActivity userTakeActivity);
 
     UserStrategyExport queryUserStrategyExportByUId(String uId);

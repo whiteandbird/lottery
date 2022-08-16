@@ -10,6 +10,7 @@ import it.comwang.lottery.common.Constants;
 import it.comwang.lottery.common.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
 
@@ -75,6 +76,29 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
 
     @Override
     protected Result grabActivity(PartakeReq partakeReq, ActivityBillVO billVO) {
-        return null;
+        try{
+            // 设置上下文
+            idbRouterStrategy.doRouter(partakeReq.getuId());
+            return transactionTemplate.execute( status -> {
+                try{
+                    int updateCount = userTakeActivityRepository.subtractionLeftCount(billVO.getActivityId(), billVO.getActivityName(), billVO.getTakeCount(), billVO.getUserTakeLeftCount(), partakeReq.getuId(), partakeReq.getPartakeDate());
+                    if(0 == updateCount){
+                        status.setRollbackOnly();
+                        logger.error("领取活动 扣减个人记录失败 activityId:{} uId:{}", partakeReq.getActivityId(), partakeReq.getuId());
+                        return Result.buildResult(Constants.ResponseCode.NO_UPDATE);
+                    }
+                    Long takeId = idsIdGeneratorMap.get(Constants.Ids.SnowFlake).nextId();
+                    userTakeActivityRepository.takeActivity(billVO.getActivityId(), billVO.getActivityName(), billVO.getTakeCount(), billVO.getUserTakeLeftCount(), partakeReq.getuId(), partakeReq.getPartakeDate(), takeId);
+
+                }catch (DuplicateKeyException e){
+                    status.setRollbackOnly();
+                    logger.error("领取活动 唯一索引冲突 activityId {} uid {}", partakeReq.getActivityId(), partakeReq.getuId());
+                    return Result.buildResult(Constants.ResponseCode.INDEX_DUP);
+                }
+                return Result.buildResult(Constants.ResponseCode.SUCCESS);
+            });
+        }finally {
+            idbRouterStrategy.clear();
+        }
     }
 }

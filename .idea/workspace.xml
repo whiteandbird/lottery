@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6a0fafe-7ce3-4656-9e31-2a5e1f98db7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/req/PartakeReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/res/PartakeResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/vo/ActivityBillVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/repository/IUserTakeActivityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/ActivityPartakeSupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/BaseActivityPartake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/impl/ActivityPartakeImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserTakeActivityCountDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/UserTakeActivityCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/repository/IActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/repository/IActivityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/IActivityPartake.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/IActivityPartake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IActivityDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/UserTakeActivityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/test/domain/ActivityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/BaseActivityPartake.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/BaseActivityPartake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/impl/ActivityPartakeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/impl/ActivityPartakeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserStrategyExportDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserStrategyExportDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserTakeActivityCountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserTakeActivityCountDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserTakeActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserTakeActivityDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/ActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/ActivityRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Activity_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Activity_Mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/UserTakeActivityCount_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/UserTakeActivityCount_Mapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,33 +79,49 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserStrategyExportDaoTest.test_insert">
-    <configuration name="ActivityTest.test_alterState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ActivityTest.test_activityPartake">
+    <configuration name="ActivityTest.test_activityPartake" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lottery-interface" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itwang.lottery.*" />
+          <option name="PATTERN" value="com.itwang.lottery.test.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.itwang.lottery" />
-      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.ActivityTest" />
+      <option name="PACKAGE_NAME" value="com.itwang.lottery.test.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.test.domain.ActivityTest" />
+      <option name="METHOD_NAME" value="test_activityPartake" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActivityTest.test_alterState (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lottery-interface" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itwang.lottery.test.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itwang.lottery.test.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.test.domain.ActivityTest" />
       <option name="METHOD_NAME" value="test_alterState" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ActivityTest.test_createActivity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ActivityTest.test_createActivity (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lottery-interface" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itwang.lottery.*" />
+          <option name="PATTERN" value="com.itwang.lottery.test.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.itwang.lottery" />
-      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.ActivityTest" />
+      <option name="PACKAGE_NAME" value="com.itwang.lottery.test.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.test.domain.ActivityTest" />
       <option name="METHOD_NAME" value="test_createActivity" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -128,22 +139,6 @@
       <option name="PACKAGE_NAME" value="com.itwang.lottery" />
       <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.GeneratorTest" />
       <option name="METHOD_NAME" value="testGenerator" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IGoodFactoryTest.test_Award" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lottery-interface" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itwang.lottery.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.itwang.lottery" />
-      <option name="MAIN_CLASS_NAME" value="com.itwang.lottery.IGoodFactoryTest" />
-      <option name="METHOD_NAME" value="test_Award" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ActivityTest.test_activityPartake" />
+        <item itemvalue="JUnit.ActivityTest.test_alterState (1)" />
+        <item itemvalue="JUnit.ActivityTest.test_createActivity (1)" />
         <item itemvalue="JUnit.UserStrategyExportDaoTest.test_insert" />
         <item itemvalue="JUnit.GeneratorTest.testGenerator" />
-        <item itemvalue="JUnit.ActivityTest.test_alterState" />
-        <item itemvalue="JUnit.ActivityTest.test_createActivity" />
-        <item itemvalue="JUnit.IGoodFactoryTest.test_Award" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +193,10 @@
       <workItem from="1658145796714" duration="193000" />
       <workItem from="1658146043706" duration="70000" />
       <workItem from="1658146158849" duration="42000" />
-      <workItem from="1658146460614" duration="7690000" />
+      <workItem from="1658146460614" duration="8413000" />
+      <workItem from="1659440926222" duration="2503000" />
+      <workItem from="1660488593078" duration="1052000" />
+      <workItem from="1660649603343" duration="6492000" />
     </task>
     <servers />
   </component>

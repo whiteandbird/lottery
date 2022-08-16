@@ -6,6 +6,7 @@
         <id column="id" property="id"/>
         <result column="activity_id" property="activityId"/>
         <result column="activity_name" property="activityName"/>
+        <result column="strategy_id" property="strategyId"/>
         <result column="activity_desc" property="activityDesc"/>
         <result column="begin_date_time" property="beginDateTime"/>
         <result column="end_date_time" property="endDateTime"/>
@@ -19,18 +20,18 @@
 
     <insert id="insert" parameterType="com.itwang.lottery.infrastructure.po.Activity">
         INSERT INTO activity
-        (activity_id, activity_name, activity_desc, begin_date_time, end_date_time,
+        (activity_id, activity_name, strategy_id, activity_desc, begin_date_time, end_date_time,
         stock_count, take_count, state, creator, create_time, update_time)
         VALUES
-        (#{activityId}, #{activityName}, #{activityDesc}, #{beginDateTime}, #{endDateTime},
+        (#{activityId}, #{activityName}, #{strategyId}, #{activityDesc}, #{beginDateTime}, #{endDateTime},
          #{stockCount}, #{takeCount}, #{state}, #{creator}, now(), now())
     </insert>
 
     <select id="queryActivityById" parameterType="java.lang.Long" resultMap="activityMap">
-        SELECT activity_id, activity_name, activity_desc, begin_date_time, end_date_time,
+        SELECT activity_id, activity_name, strategy_id, activity_desc, begin_date_time, end_date_time,
         stock_count, take_count, state, creator, create_time, update_time
         FROM activity
-        WHERE activityId = #{activityId}
+        WHERE activity_id = #{activityId}
     </select>
 
 
@@ -39,6 +40,11 @@
         update activity
         set state = #{afterState}
         where activity_id = #{activityId} AND state = #{beforeState}
+    </update>
+
+    <update id="subtractionActivityStock" parameterType="java.lang.Long">
+        UPDATE activity set stock_surplus_count = stock_surplus_count - 1
+        WHERE activity_id #{TEST_ACTIVITY_ID} AND stock_surplus_count > 0
     </update>
 
 

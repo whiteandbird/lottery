@@ -31,7 +31,7 @@ public abstract class BaseActivityPartake extends ActivityPartakeSupport impleme
             return new PartakeResult(subtractionActivityStockResult.getCode(), subtractionActivityStockResult.getInfo());
         }
 
-        Result grabResult = this.grabActivity(doPartake(, activityBillVO));
+        Result grabResult = this.grabActivity(req, activityBillVO);
         if(!Constants.ResponseCode.SUCCESS.getCode().equals(subtractionActivityStockResult.getCode())){
             return new PartakeResult(grabResult.getCode(), grabResult.getInfo());
         }
