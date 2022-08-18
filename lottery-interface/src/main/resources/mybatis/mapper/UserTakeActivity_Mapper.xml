@@ -8,6 +8,8 @@
         <result column="take_id" property="takeId"/>
         <result column="activity_id" property="activityId"/>
         <result column="activity_name" property="activityName"/>
+        <result column="strategy_id" property="strategyId"/>
+        <result column="state" property="state"/>
         <result column="take_date" property="takeDate"/>
         <result column="take_count" property="takeCount"/>
         <result column="uuid" property="uuid"/>
@@ -23,5 +25,13 @@
         (#{uId}, #{takeId}, #{activityId}, #{activityName}, #{takeDate},
          #{takeCount}, #{uuid}, now(), now())
     </insert>
+
+    <select id="queryNoConsumedTakeActivityOrder" parameterType="com.itwang.lottery.infrastructure.po.UserTakeActivity" resultType="userTakeActivityMap">
+        select activity_id, take_id, strategy_id, state
+        from user_take_activity
+        where u_id = #{uId} and activity_id = #{activityId} and state = 0
+        order by id DESC
+        limit 1
+    </select>
 
 </mapper>

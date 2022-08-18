@@ -14,4 +14,7 @@ public interface IUserTakeActivityDao {
     void insert(UserTakeActivity userTakeActivity);
 
     UserStrategyExport queryUserStrategyExportByUId(String uId);
+
+    @DBRouter
+    UserTakeActivity queryNoConsumedTakeActivityOrder(UserTakeActivity userTakeActivity);
 }

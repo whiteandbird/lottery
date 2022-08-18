@@ -24,6 +24,10 @@ public class UserTakeActivity {
      * 活动ID
      */
     private Long activityId;
+
+    private Long strategyId;
+
+    private Integer state;
     /**
      * 活动名称
      */
@@ -128,5 +132,21 @@ public class UserTakeActivity {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Long getStrategyId() {
+        return strategyId;
+    }
+
+    public void setStrategyId(Long strategyId) {
+        this.strategyId = strategyId;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

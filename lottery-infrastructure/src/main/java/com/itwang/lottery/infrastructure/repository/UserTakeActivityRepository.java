@@ -1,10 +1,12 @@
 package com.itwang.lottery.infrastructure.repository;
 
+import com.itwang.lottery.domain.activity.model.vo.UserTakeActivityVO;
 import com.itwang.lottery.domain.activity.repository.IUserTakeActivityRepository;
 import com.itwang.lottery.infrastructure.dao.IUserTakeActivityCountDao;
 import com.itwang.lottery.infrastructure.dao.IUserTakeActivityDao;
 import com.itwang.lottery.infrastructure.po.UserTakeActivity;
 import com.itwang.lottery.infrastructure.po.UserTakeActivityCount;
+import it.comwang.lottery.common.Constants;
 import org.apache.catalina.User;
 import org.springframework.stereotype.Component;
 
@@ -43,7 +45,7 @@ public class UserTakeActivityRepository implements IUserTakeActivityRepository {
     }
 
     @Override
-    public void takeActivity(Long activityId, String activityName, Integer takeCount, Integer userTakeLeftCount, String uId, Date takeTime, Long takeId) {
+    public void takeActivity(Long activityId, String activityName,Long strategyId, Integer takeCount, Integer userTakeLeftCount, String uId, Date takeTime, Long takeId) {
         UserTakeActivity userTakeActivity = new UserTakeActivity();
         userTakeActivity.setuId(uId);
         userTakeActivity.setTakeId(takeId);
@@ -56,6 +58,26 @@ public class UserTakeActivityRepository implements IUserTakeActivityRepository {
             userTakeActivity.setTakeCount(takeCount-userTakeLeftCount);
         }
         String uuId = uId + "_" + activityId + "_" + userTakeActivity.getTakeCount();
+        userTakeActivity.setStrategyId(strategyId);
+        userTakeActivity.setState(Constants.TaskState.NO_USED.getCode());
+        userTakeActivity.setUuid(uuId);
         userTakeActivityDao.insert(userTakeActivity);
+    }
+
+    @Override
+    public UserTakeActivityVO queryNoConsumedTakeActivityOrder(Long activityId, String uId) {
+        UserTakeActivity userTakeActivity = new UserTakeActivity();
+        userTakeActivity.setuId(uId);
+        userTakeActivity.setActivityId(activityId);
+        UserTakeActivity result = userTakeActivityDao.queryNoConsumedTakeActivityOrder(userTakeActivity);
+        if(null == result){
+            return null;
+        }
+        UserTakeActivityVO userTakeActivityVO = new UserTakeActivityVO();
+        userTakeActivityVO.setActivityId(result.getActivityId());
+        userTakeActivityVO.setStrategyId(result.getStrategyId());
+        userTakeActivityVO.setState(result.getState());
+        userTakeActivityVO.setTakeId(result.getTakeId());
+        return userTakeActivityVO;
     }
 }

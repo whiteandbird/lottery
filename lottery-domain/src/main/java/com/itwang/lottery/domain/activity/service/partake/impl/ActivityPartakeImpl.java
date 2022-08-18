@@ -2,6 +2,7 @@ package com.itwang.lottery.domain.activity.service.partake.impl;
 
 import com.itwang.lottery.domain.activity.model.req.PartakeReq;
 import com.itwang.lottery.domain.activity.model.vo.ActivityBillVO;
+import com.itwang.lottery.domain.activity.model.vo.UserTakeActivityVO;
 import com.itwang.lottery.domain.activity.repository.IUserTakeActivityRepository;
 import com.itwang.lottery.domain.activity.service.partake.BaseActivityPartake;
 import com.itwang.lottery.domain.support.ids.IdGenerator;
@@ -75,7 +76,7 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
     }
 
     @Override
-    protected Result grabActivity(PartakeReq partakeReq, ActivityBillVO billVO) {
+    protected Result grabActivity(PartakeReq partakeReq, ActivityBillVO billVO, Long takeId) {
         try{
             // 设置上下文
             idbRouterStrategy.doRouter(partakeReq.getuId());
@@ -87,8 +88,9 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
                         logger.error("领取活动 扣减个人记录失败 activityId:{} uId:{}", partakeReq.getActivityId(), partakeReq.getuId());
                         return Result.buildResult(Constants.ResponseCode.NO_UPDATE);
                     }
-                    Long takeId = idsIdGeneratorMap.get(Constants.Ids.SnowFlake).nextId();
-                    userTakeActivityRepository.takeActivity(billVO.getActivityId(), billVO.getActivityName(), billVO.getTakeCount(), billVO.getUserTakeLeftCount(), partakeReq.getuId(), partakeReq.getPartakeDate(), takeId);
+
+                    // 写入领取活动记录
+                    userTakeActivityRepository.takeActivity(billVO.getActivityId(), billVO.getActivityName(),billVO.getStrategyId(), billVO.getTakeCount(), billVO.getUserTakeLeftCount(), partakeReq.getuId(), partakeReq.getPartakeDate(), takeId);
 
                 }catch (DuplicateKeyException e){
                     status.setRollbackOnly();
@@ -100,5 +102,10 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
         }finally {
             idbRouterStrategy.clear();
         }
+    }
+
+    @Override
+    protected UserTakeActivityVO queryNoConsumedTakeActivityOrder(Long activityId, String uId) {
+        return userTakeActivityRepository.q;
     }
 }

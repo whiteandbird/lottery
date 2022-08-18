@@ -3,8 +3,13 @@ package com.itwang.lottery.domain.activity.service.partake;
 import com.itwang.lottery.domain.activity.model.req.PartakeReq;
 import com.itwang.lottery.domain.activity.model.res.PartakeResult;
 import com.itwang.lottery.domain.activity.model.vo.ActivityBillVO;
+import com.itwang.lottery.domain.activity.model.vo.UserTakeActivityVO;
+import com.itwang.lottery.domain.support.ids.IdGenerator;
 import it.comwang.lottery.common.Constants;
 import it.comwang.lottery.common.Result;
+
+import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * 活动领取模板抽象类
@@ -15,8 +20,15 @@ import it.comwang.lottery.common.Result;
 public abstract class BaseActivityPartake extends ActivityPartakeSupport implements IActivityPartake {
 
 
+    @Resource
+    private Map<Constants.Ids, IdGenerator> idGeneratorMap;
+
     @Override
     public PartakeResult doPartake(PartakeReq req) {
+        UserTakeActivityVO userTakeActivityVO = this.queryNoConsumedTakeActivityOrder(req.getActivityId(), req.getuId());
+        if(userTakeActivityVO != null){
+            return
+        }
         // 查询活动账单
         ActivityBillVO activityBillVO = queryActivityBill(req);
 
@@ -31,7 +43,8 @@ public abstract class BaseActivityPartake extends ActivityPartakeSupport impleme
             return new PartakeResult(subtractionActivityStockResult.getCode(), subtractionActivityStockResult.getInfo());
         }
 
-        Result grabResult = this.grabActivity(req, activityBillVO);
+        long takeId = idGeneratorMap.get(Constants.Ids.SnowFlake).nextId();
+        Result grabResult = this.grabActivity(req, activityBillVO, takeId);
         if(!Constants.ResponseCode.SUCCESS.getCode().equals(subtractionActivityStockResult.getCode())){
             return new PartakeResult(grabResult.getCode(), grabResult.getInfo());
         }
@@ -45,11 +58,15 @@ public abstract class BaseActivityPartake extends ActivityPartakeSupport impleme
 
     }
 
+    private PartakeResult buildPartakeResult()
+
+    protected  abstract UserTakeActivityVO queryNoConsumedTakeActivityOrder(Long activityId, String uId);
+
     protected abstract Result checkActivityBill(PartakeReq partakeReq, ActivityBillVO activityBillVO);
 
 
     protected abstract Result subtractionActivityStock(PartakeReq partakeReq);
 
 
-    protected  abstract Result grabActivity(PartakeReq partakeReq, ActivityBillVO billVO);
+    protected  abstract Result grabActivity(PartakeReq partakeReq, ActivityBillVO billVO, Long takeId);
 }

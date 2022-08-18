@@ -10,6 +10,11 @@ public class DrawReq {
 
     private Long strategyId;
 
+    /**
+     * 防重ID
+     */
+    private String uuId;
+
 
     public DrawReq() {
     }
@@ -18,6 +23,13 @@ public class DrawReq {
         this.uId = uId;
         this.strategyId = strategyId;
     }
+
+    public DrawReq(String uId, Long strategyId, String uuId) {
+        this.uId = uId;
+        this.strategyId = strategyId;
+        this.uuId = uuId;
+    }
+
 
     public String getuId() {
         return uId;

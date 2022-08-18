@@ -2,17 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6a0fafe-7ce3-4656-9e31-2a5e1f98db7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/UserTakeActivityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/test/domain/ActivityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-application/src/main/java/com/itwang/lottery/application/process/IActivityProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-application/src/main/java/com/itwang/lottery/application/process/impl/ActivityProcessImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-application/src/main/java/com/itwang/lottery/application/process/req/DrawProcessReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-application/src/main/java/com/itwang/lottery/application/process/res/DrawProcessResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/vo/UserTakeActivityVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-application/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/res/PartakeResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/res/PartakeResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/repository/IUserTakeActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/repository/IUserTakeActivityRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/BaseActivityPartake.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/BaseActivityPartake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/impl/ActivityPartakeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/impl/ActivityPartakeImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserStrategyExportDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserStrategyExportDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserTakeActivityCountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserTakeActivityCountDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserTakeActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserTakeActivityDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Activity_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Activity_Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/UserTakeActivityCount_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/UserTakeActivityCount_Mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/UserTakeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/UserTakeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/UserTakeActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/UserTakeActivityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/UserTakeActivity_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/UserTakeActivity_Mapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +59,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17602997" />
     <property name="project.structure.side.proportion" value="0.33295062" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -196,7 +202,8 @@
       <workItem from="1658146460614" duration="8413000" />
       <workItem from="1659440926222" duration="2503000" />
       <workItem from="1660488593078" duration="1052000" />
-      <workItem from="1660649603343" duration="6492000" />
+      <workItem from="1660649603343" duration="6603000" />
+      <workItem from="1660741069796" duration="14500000" />
     </task>
     <servers />
   </component>
@@ -279,7 +286,7 @@
           <line>57</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
           <line>58</line>
           <option name="timeStamp" value="19" />
@@ -300,19 +307,74 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/config/DataSourceAutoConfig.class</url>
-          <line>76</line>
-          <option name="timeStamp" value="27" />
+          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/dynamic/DynamicMybatisPlugin.class</url>
+          <line>41</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/dynamic/DynamicDataSource.class</url>
-          <line>15</line>
-          <option name="timeStamp" value="28" />
+          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/strategy/impl/DBRouterStrategyHashCode.class</url>
+          <line>28</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/DBContextHolder.class</url>
-          <line>19</line>
-          <option name="timeStamp" value="29" />
+          <url>file://$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/ActivityRepository.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/ActivityRepository.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/dynamic/DynamicMybatisPlugin.class</url>
+          <line>36</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/DBRouterJoinPoint.class</url>
+          <line>40</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/DBRouterJoinPoint.class</url>
+          <line>55</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/DBRouterJoinPoint.class</url>
+          <line>57</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/DBRouterJoinPoint.class</url>
+          <line>58</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/DBRouterJoinPoint.class</url>
+          <line>62</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/DBRouterJoinPoint.class</url>
+          <line>66</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mvn/lottery/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar!/org/apache/commons/beanutils/BeanUtils.class</url>
+          <line>71</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/DBRouterJoinPoint.class</url>
+          <line>70</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mvn/lottery/com/itwang/dbRouter/1.0-SNAPSHOT/dbRouter-1.0-SNAPSHOT.jar!/com/wang/middleware/db/router/DBRouterJoinPoint.class</url>
+          <line>80</line>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/repository/IStrategyRepository.java</url>
@@ -322,7 +384,7 @@
           </properties>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/lottery-interface/src/test/java/com/itwang/lottery/IGoodFactoryTest.java</url>
           <line>47</line>
           <properties class="com.itwang.lottery.IGoodFactoryTest" method="test_Award">
