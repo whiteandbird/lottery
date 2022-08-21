@@ -28,7 +28,7 @@ public class UserTakeActivityCount {
      */
     private Integer totalCount;
     /**
-     * 已领取次数
+     * 剩余次数
      */
     private Integer leftCount;
     /**

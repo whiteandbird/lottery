@@ -2,6 +2,7 @@ package com.itwang.lottery.domain.activity.service.partake.impl;
 
 import com.itwang.lottery.domain.activity.model.req.PartakeReq;
 import com.itwang.lottery.domain.activity.model.vo.ActivityBillVO;
+import com.itwang.lottery.domain.activity.model.vo.DrawOrderVO;
 import com.itwang.lottery.domain.activity.model.vo.UserTakeActivityVO;
 import com.itwang.lottery.domain.activity.repository.IUserTakeActivityRepository;
 import com.itwang.lottery.domain.activity.service.partake.BaseActivityPartake;
@@ -9,6 +10,7 @@ import com.itwang.lottery.domain.support.ids.IdGenerator;
 import com.wang.middleware.db.router.strategy.IDBRouterStrategy;
 import it.comwang.lottery.common.Constants;
 import it.comwang.lottery.common.Result;
+import org.apache.tomcat.util.bcel.Const;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DuplicateKeyException;
@@ -79,17 +81,21 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
     protected Result grabActivity(PartakeReq partakeReq, ActivityBillVO billVO, Long takeId) {
         try{
             // 设置上下文
+            // 加入活动
             idbRouterStrategy.doRouter(partakeReq.getuId());
             return transactionTemplate.execute( status -> {
                 try{
+                    // 参与一次抽奖   那么用户抽奖次数减1  查询当前是否有可用抽奖机会
                     int updateCount = userTakeActivityRepository.subtractionLeftCount(billVO.getActivityId(), billVO.getActivityName(), billVO.getTakeCount(), billVO.getUserTakeLeftCount(), partakeReq.getuId(), partakeReq.getPartakeDate());
                     if(0 == updateCount){
+                        // 抽奖次数归0
                         status.setRollbackOnly();
                         logger.error("领取活动 扣减个人记录失败 activityId:{} uId:{}", partakeReq.getActivityId(), partakeReq.getuId());
                         return Result.buildResult(Constants.ResponseCode.NO_UPDATE);
                     }
 
-                    // 写入领取活动记录
+                    // 写入领取活动记录   用户还有抽奖机会
+                    // 记录参与活动的流水
                     userTakeActivityRepository.takeActivity(billVO.getActivityId(), billVO.getActivityName(),billVO.getStrategyId(), billVO.getTakeCount(), billVO.getUserTakeLeftCount(), partakeReq.getuId(), partakeReq.getPartakeDate(), takeId);
 
                 }catch (DuplicateKeyException e){
@@ -106,6 +112,33 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
 
     @Override
     protected UserTakeActivityVO queryNoConsumedTakeActivityOrder(Long activityId, String uId) {
-        return userTakeActivityRepository.q;
+        return userTakeActivityRepository.queryNoConsumedTakeActivityOrder(activityId, uId);
+    }
+
+    @Override
+    public Result recordDrawOrder(DrawOrderVO res) {
+        try{
+            idbRouterStrategy.doRouter(res.getuId());
+            return transactionTemplate.execute(status ->{
+                try{
+                    System.out.println(status);
+                    // 锁定活动领取记录
+                    int lockCount = userTakeActivityRepository.lockTakeActivity(res.getuId(), res.getActivityId(), res.getTakeId());
+                    if(0 == lockCount){
+                        status.setRollbackOnly();
+                        logger.error("记录中将单, 个人参与活动抽奖已消耗完");
+                        return Result.buildResult(Constants.ResponseCode.NO_UPDATE);
+                    }
+                }catch (DuplicateKeyException e){
+                    logger.error("唯一键冲突",e);
+                    status.setRollbackOnly();
+                    return Result.buildResult(Constants.ResponseCode.INDEX_DUP);
+                }
+                return Result.buildSuccessResult();
+                // 保存抽奖信息
+            });
+        }finally {
+            idbRouterStrategy.clear();
+        }
     }
 }

@@ -16,6 +16,7 @@ public class ActivityPartakeSupport {
     protected IActivityRepository activityRepository;
 
     protected ActivityBillVO queryActivityBill(PartakeReq partakeReq){
+        // 用户参与哪个活动 什么时候
         return activityRepository.queryActivityBill(partakeReq);
     }
 }

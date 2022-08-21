@@ -5,6 +5,7 @@ import com.itwang.lottery.application.process.req.DrawProcessReq;
 import com.itwang.lottery.application.process.res.DrawProcessResult;
 import com.itwang.lottery.domain.activity.model.req.PartakeReq;
 import com.itwang.lottery.domain.activity.model.res.PartakeResult;
+import com.itwang.lottery.domain.activity.model.vo.DrawOrderVO;
 import com.itwang.lottery.domain.activity.service.partake.IActivityPartake;
 import com.itwang.lottery.domain.strategy.model.req.DrawReq;
 import com.itwang.lottery.domain.strategy.model.res.DrawResult;
@@ -54,9 +55,29 @@ public class ActivityProcessImpl implements IActivityProcess {
         }
         DrawAwardInfo drawAwardInfo = drawResult.getDrawAwardInfo();
         // TODO 结果落库
+        activityPartake.recordDrawOrder(buildDrawOrderVO(req, strategyId, takeId, drawAwardInfo));
 //        activityPartake
 
+        return new DrawProcessResult(Constants.ResponseCode.SUCCESS.getCode(), Constants.ResponseCode.SUCCESS.getInfo(), drawAwardInfo);
+    }
 
-        return null;
+
+    private DrawOrderVO buildDrawOrderVO(DrawProcessReq req, Long strategyId, Long takeId, DrawAwardInfo drawAwardInfo) {
+        long orderId = idGeneratorMap.get(Constants.Ids.SnowFlake).nextId();
+        DrawOrderVO drawOrderVO = new DrawOrderVO();
+        drawOrderVO.setuId(req.getuId());
+        drawOrderVO.setTakeId(takeId);
+        drawOrderVO.setActivityId(req.getActivityId());
+        drawOrderVO.setOrderId(orderId);
+        drawOrderVO.setStrategyId(strategyId);
+        drawOrderVO.setStrategyMode(drawAwardInfo.getStrategyMode());
+        drawOrderVO.setGrantType(drawAwardInfo.getGrantType());
+        drawOrderVO.setGrantDate(drawAwardInfo.getGrantDate());
+        drawOrderVO.setGrantState(Constants.GrantState.INIT.getCode());
+        drawOrderVO.setAwardId(drawAwardInfo.getAwardId());
+        drawOrderVO.setAwardType(drawAwardInfo.getAwardType());
+        drawOrderVO.setAwardName(drawAwardInfo.getAwardName());
+        drawOrderVO.setAwardContent(drawAwardInfo.getAwardContent());
+        return drawOrderVO;
     }
 }

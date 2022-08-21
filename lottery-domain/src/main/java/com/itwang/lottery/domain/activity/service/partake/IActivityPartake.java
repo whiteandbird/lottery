@@ -2,6 +2,8 @@ package com.itwang.lottery.domain.activity.service.partake;
 
 import com.itwang.lottery.domain.activity.model.req.PartakeReq;
 import com.itwang.lottery.domain.activity.model.res.PartakeResult;
+import com.itwang.lottery.domain.activity.model.vo.DrawOrderVO;
+import it.comwang.lottery.common.Result;
 
 /**
  * @Author: whiteandbird
@@ -15,5 +17,7 @@ public interface IActivityPartake {
      * @return
      */
     PartakeResult doPartake(PartakeReq req);
+
+    Result recordDrawOrder(DrawOrderVO res);
 }
 

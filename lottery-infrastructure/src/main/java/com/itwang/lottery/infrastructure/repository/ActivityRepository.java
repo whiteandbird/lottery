@@ -81,12 +81,16 @@ public class ActivityRepository implements IActivityRepository {
     @Override
     public ActivityBillVO queryActivityBill(PartakeReq req) {
         // 活动信息查新
+        // 该活动的配置
+        // 活动设置的库存 剩余库存 每人可以参与次数
         Activity activity = activityDao.queryActivityById(req.getActivityId());
 
+        // 用户参与表
         UserTakeActivityCount userTakeActivityCountReq = new UserTakeActivityCount();
         userTakeActivityCountReq.setuId(req.getuId());
         userTakeActivityCountReq.setActivityId(req.getActivityId());
 
+        // 用户活动参与记录表
         UserTakeActivityCount userTakeActivityCount = userTakeActivityCountDao.queryUserTakeActivityCount(userTakeActivityCountReq);
 
         // 结果封装
@@ -96,10 +100,12 @@ public class ActivityRepository implements IActivityRepository {
         activityBillVO.setActivityName(activity.getActivityName());
         activityBillVO.setBeginDateTime(activity.getBeginDateTime());
         activityBillVO.setEndDateTime(activity.getEndDateTime());
+        // 剩余库存
         activityBillVO.setTakeCount(activity.getTakeCount());
         activityBillVO.setStockSurplusCount(activity.getStockSurplusCount());
         activityBillVO.setStrategyId(activity.getStrategyId());
         activityBillVO.setState(activity.getState());
+        // 剩余次数
         activityBillVO.setUserTakeLeftCount(null == userTakeActivityCount ? null : userTakeActivityCount.getLeftCount());
 
         return activityBillVO;

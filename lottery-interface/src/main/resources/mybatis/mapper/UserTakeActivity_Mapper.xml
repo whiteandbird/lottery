@@ -20,13 +20,18 @@
     <insert id="insert" parameterType="com.itwang.lottery.infrastructure.po.UserTakeActivity">
         INSERT INTO user_take_activity
         (u_id, take_id, activity_id, activity_name, take_date,
-         take_count, uuid, create_time, update_time)
+         take_count,strategy_id, state, uuid, create_time, update_time)
         VALUES
         (#{uId}, #{takeId}, #{activityId}, #{activityName}, #{takeDate},
-         #{takeCount}, #{uuid}, now(), now())
+         #{takeCount},#{srategyId}, #{state}, #{uuid}, now(), now())
     </insert>
 
-    <select id="queryNoConsumedTakeActivityOrder" parameterType="com.itwang.lottery.infrastructure.po.UserTakeActivity" resultType="userTakeActivityMap">
+    <update id="lockTakeActivity" parameterType="com.itwang.lottery.infrastructure.po.UserTakeActivity">
+        update user_take_activity set state = 1
+        where u_id = #{uId} and activity_id = #{activityId} and state = 0
+    </update>
+
+    <select id="queryNoConsumedTakeActivityOrder" parameterType="com.itwang.lottery.infrastructure.po.UserTakeActivity" resultMap="userTakeActivityMap">
         select activity_id, take_id, strategy_id, state
         from user_take_activity
         where u_id = #{uId} and activity_id = #{activityId} and state = 0

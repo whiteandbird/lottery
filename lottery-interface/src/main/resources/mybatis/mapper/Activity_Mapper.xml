@@ -29,7 +29,7 @@
 
     <select id="queryActivityById" parameterType="java.lang.Long" resultMap="activityMap">
         SELECT activity_id, activity_name, strategy_id, activity_desc, begin_date_time, end_date_time,
-        stock_count, take_count, state, creator, create_time, update_time
+        stock_count, stock_surplus_count, take_count, state, creator, create_time, update_time
         FROM activity
         WHERE activity_id = #{activityId}
     </select>
@@ -44,7 +44,7 @@
 
     <update id="subtractionActivityStock" parameterType="java.lang.Long">
         UPDATE activity set stock_surplus_count = stock_surplus_count - 1
-        WHERE activity_id #{TEST_ACTIVITY_ID} AND stock_surplus_count > 0
+        WHERE activity_id = #{TEST_ACTIVITY_ID} AND stock_surplus_count > 0
     </update>
 
 
