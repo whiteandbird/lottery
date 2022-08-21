@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6a0fafe-7ce3-4656-9e31-2a5e1f98db7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/model/vo/DrawOrderVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-application/src/main/java/com/itwang/lottery/application/process/impl/ActivityProcessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-application/src/main/java/com/itwang/lottery/application/process/impl/ActivityProcessImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-common/src/main/java/it/comwang/lottery/common/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/repository/IUserTakeActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/repository/IUserTakeActivityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/ActivityPartakeSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/ActivityPartakeSupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/BaseActivityPartake.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/BaseActivityPartake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/IActivityPartake.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/IActivityPartake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/impl/ActivityPartakeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/activity/service/partake/impl/ActivityPartakeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/model/vo/DrawAwardInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/model/vo/DrawAwardInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserTakeActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/dao/IUserTakeActivityDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/UserTakeActivityCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/po/UserTakeActivityCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/ActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/ActivityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/UserTakeActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-infrastructure/src/main/java/com/itwang/lottery/infrastructure/repository/UserTakeActivityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-interface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Activity_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/Activity_Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/UserTakeActivity_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/UserTakeActivity_Mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +189,7 @@
       <workItem from="1660649603343" duration="6603000" />
       <workItem from="1660741069796" duration="14870000" />
       <workItem from="1660961092814" duration="5556000" />
-      <workItem from="1661065699176" duration="11567000" />
+      <workItem from="1661065699176" duration="12391000" />
     </task>
     <servers />
   </component>
@@ -254,17 +239,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
-          <line>35</line>
+          <line>38</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
-          <line>61</line>
+          <line>66</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
-          <line>65</line>
+          <line>70</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

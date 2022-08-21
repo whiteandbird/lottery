@@ -26,12 +26,16 @@ public abstract class AbstractDrawBase extends DrawStrategySupport implements ID
 
     @Override
     public DrawResult doDrawExec(DrawReq req) {
+        // 奖品跟策略绑定
+        // 策略id 策略 以及策略明细
         StrategyRich strategyRich = queryStrategyRich(req.getStrategyId());
         StrategyBriefVO strategy = strategyRich.getStrategy();
         List<StrategyDetailBriefVO> strategyDetailList = strategyRich.getStrategyDetailList();
 
+        // 为抽奖进行后续铺垫 准备数据
         this.checkAndInitRateData(req.getStrategyId(), strategy.getStrategyMode(), strategyDetailList);
 
+        // 用来进行风控
         List<String> excludeAwardIds = this.queryExcludeAwardIds(req.getStrategyId());
 
 
@@ -45,19 +49,23 @@ public abstract class AbstractDrawBase extends DrawStrategySupport implements ID
     protected abstract List<String> queryExcludeAwardIds(Long strategyId);
 
     public void checkAndInitRateData(Long strategyId, Integer strategyMode, List<StrategyDetailBriefVO> strategyDetailList){
+        // 采用何种算法
         IDrawAlgorithm drawAlgorithm = drawAlgorithmMap.get(strategyMode);
 
         List<AwardRateInfo> awardRateInfoList = new ArrayList<>(strategyDetailList.size());
+        // 初始化奖品id 以及奖品的概率
         for(StrategyDetailBriefVO strategyDetail : strategyDetailList){
             awardRateInfoList.add(new AwardRateInfo(strategyDetail.getAwardId(), strategyDetail.getAwardRate()));
 
         }
         // 非单体策略 不需要进行初始化
         if(Constants.StrategyMode.ENTIRETY.getCode().equals(strategyMode)){
+            // 把奖品以及概率放进去  供之后使用
             if(CollUtil.isNotEmpty(strategyDetailList)){
                 drawAlgorithm.putAwardRateInfoIfAbsent(strategyId, awardRateInfoList);
             }
         }
+        // 单体策略抽奖用到了斐波拉契算法  将奖品放在某个区间   概率如果在那直接取出来
         if(!Constants.StrategyMode.SINGLE.getCode().equals(strategyMode)) return;
         boolean existRateTuple = drawAlgorithm.isExistRateTuple(strategyId);
         if(existRateTuple) return;
