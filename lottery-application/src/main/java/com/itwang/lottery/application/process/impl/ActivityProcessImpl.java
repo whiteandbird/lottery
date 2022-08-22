@@ -55,6 +55,7 @@ public class ActivityProcessImpl implements IActivityProcess {
         }
         DrawAwardInfo drawAwardInfo = drawResult.getDrawAwardInfo();
         // TODO 结果落库
+        // 此处用了事务
         activityPartake.recordDrawOrder(buildDrawOrderVO(req, strategyId, takeId, drawAwardInfo));
 //        activityPartake
 

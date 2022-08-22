@@ -20,10 +20,10 @@
     <insert id="insert" parameterType="com.itwang.lottery.infrastructure.po.UserTakeActivity">
         INSERT INTO user_take_activity
         (u_id, take_id, activity_id, activity_name, take_date,
-         take_count, uuid, create_time, update_time)
+         take_count,strategy_id, state, uuid, create_time, update_time)
         VALUES
         (#{uId}, #{takeId}, #{activityId}, #{activityName}, #{takeDate},
-         #{takeCount}, #{uuid}, now(), now())
+         #{takeCount},#{strategyId}, #{state}, #{uuid}, now(), now())
     </insert>
 
     <update id="lockTakeActivity" parameterType="com.itwang.lottery.infrastructure.po.UserTakeActivity">

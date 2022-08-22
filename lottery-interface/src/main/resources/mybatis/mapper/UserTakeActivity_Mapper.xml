@@ -23,7 +23,7 @@
          take_count,strategy_id, state, uuid, create_time, update_time)
         VALUES
         (#{uId}, #{takeId}, #{activityId}, #{activityName}, #{takeDate},
-         #{takeCount},#{srategyId}, #{state}, #{uuid}, now(), now())
+         #{takeCount},#{strategyId}, #{state}, #{uuid}, now(), now())
     </insert>
 
     <update id="lockTakeActivity" parameterType="com.itwang.lottery.infrastructure.po.UserTakeActivity">

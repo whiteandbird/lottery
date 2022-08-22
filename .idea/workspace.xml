@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6a0fafe-7ce3-4656-9e31-2a5e1f98db7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-application/src/main/java/com/itwang/lottery/application/process/impl/ActivityProcessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-application/src/main/java/com/itwang/lottery/application/process/impl/ActivityProcessImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/UserTakeActivity_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottery-interface/src/main/resources/mybatis/mapper/UserTakeActivity_Mapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +190,8 @@
       <workItem from="1660649603343" duration="6603000" />
       <workItem from="1660741069796" duration="14870000" />
       <workItem from="1660961092814" duration="5556000" />
-      <workItem from="1661065699176" duration="12391000" />
+      <workItem from="1661065699176" duration="12757000" />
+      <workItem from="1661177665568" duration="4424000" />
     </task>
     <servers />
   </component>
@@ -239,22 +241,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
-          <line>38</line>
+          <line>39</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
-          <line>66</line>
+          <line>69</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/AbstractDrawBase.java</url>
-          <line>70</line>
+          <line>73</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lottery-domain/src/main/java/com/itwang/lottery/domain/strategy/service/draw/impl/DrawExeclmpl.java</url>
-          <line>36</line>
+          <line>38</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -274,7 +276,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lottery-application/src/main/java/com/itwang/lottery/application/process/impl/ActivityProcessImpl.java</url>
-          <line>57</line>
+          <line>58</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
