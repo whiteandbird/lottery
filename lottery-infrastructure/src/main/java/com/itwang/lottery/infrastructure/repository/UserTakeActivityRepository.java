@@ -12,6 +12,7 @@ import com.itwang.lottery.infrastructure.po.UserTakeActivityCount;
 import it.comwang.lottery.common.Constants;
 import org.apache.catalina.User;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -21,7 +22,7 @@ import java.util.Date;
  * @Descripter:
  * @Date: 2022:08:16  22:44
  */
-@Component
+@Repository
 public class UserTakeActivityRepository implements IUserTakeActivityRepository {
     @Resource
     private IUserTakeActivityCountDao userTakeActivityCountDao;

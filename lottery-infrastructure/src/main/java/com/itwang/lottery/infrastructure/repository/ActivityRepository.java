@@ -8,6 +8,7 @@ import com.itwang.lottery.infrastructure.po.*;
 import it.comwang.lottery.common.Constants;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.stream.Collectors;
  * @Descripter:
  * @Date: 2022:07:16  13:47
  */
-@Component
+@Repository
 public class ActivityRepository implements IActivityRepository {
 
 

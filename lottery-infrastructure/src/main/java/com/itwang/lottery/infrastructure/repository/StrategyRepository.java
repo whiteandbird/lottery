@@ -13,6 +13,7 @@ import com.itwang.lottery.infrastructure.po.Strategy;
 import com.itwang.lottery.infrastructure.po.StrategyDetail;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import java.util.List;
  * @Descripter:
  * @Date: 2022:06:26  10:39
  */
-@Component
+@Repository
 public class StrategyRepository  implements IStrategyRepository {
     @Resource
     private IStrategyDao strategyDao;
